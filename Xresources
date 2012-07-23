@@ -1,1 +1,79 @@
-../.Xresources
+! urxvt
+
+URxvt*geometry:                90x30
+URxvt*font:  xft:Terminus:size=10
+URxvt*depth:                32
+URxvt*background:            [85]#000000
+URxvt*foreground:            [100]#ffffff
+URxvt*borderless: 1
+URxvt*scrollBar:            false
+URxvt*saveLines:  5000
+URxvt*termName:    rxvt-unicode
+URxvt*buffered: false
+URxvt.perl-ext-common: default,matcher
+URxvt.urlLauncher: chromium
+URxvt.matcher.button: 1
+
+! My Colors
+*foreground:     rgb:22/22/22
+*background:     rgb:fa/fa/fa
+!black
+*color0:         rgb:4f/4f/4f
+*color8:         rgb:25/25/25
+!!red
+*color1:         rgb:85/0d/0d
+*color9:         rgb:98/2b/2b
+!!green
+*color2:         rgb:88/be/32
+*color10:        rgb:af/f7/3e
+!!yellow (orange)
+*color3:         rgb:ff/7e/00
+*color11:        rgb:fa/d4/3d
+!!blue
+*color4:         rgb:32/4c/80
+*color12:        rgb:2b/4f/98
+!!magenta
+*color5:         rgb:70/6c/9a
+*color13:        rgb:82/6a/b1
+!!cyan
+*color6:         rgb:92/b1/9e
+*color14:        rgb:a1/cd/cd
+!!white
+*color7:         rgb:00/00/00
+*color15:        rgb:00/00/00
+
+!Pnevma1
+!*color0: #2F2E2D
+!*color8: #4A4845
+!*color1: #A36666
+!*color9: #D78787
+!*color2: #8FA57E
+!*color10: #A9BA9C
+!*color3: #D7AF87
+!*color11: #E4C9AF
+!*color4: #7FA5BD
+!*color12: #A1BDCE
+!*color5: #C79EC4
+!*color13: #D7BEDA
+!*color6: #8ADBB4
+!*color14: #B1E7DD
+!*color7: #D0D0D0
+!*color15: #EFEFEF
+
+!Pnevma2 - A heavy mod of the original.
+!*color0: #2F2E2D
+!*color8: #4A4845
+!*color1: #C37561
+!*color9: #D19485
+!*color2: #A0A57E
+!*color10: #B6B99D
+!*color3: #D1A375
+!*color11: #DEBC9C
+!*color4: #7985A3
+!*color12: #98A1B9
+!*color5: #AB716D
+!*color13: #BE918E
+!*color6: #98B9B1
+!*color14: #CBE6CB
+!*color7: #D0D0D0
+!*color15: #EFEFEF

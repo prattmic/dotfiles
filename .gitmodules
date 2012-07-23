@@ -1,0 +1,3 @@
+[submodule "vim/bundle/textobj-word-column"]
+	path = vim/bundle/textobj-word-column
+	url = https://github.com/coderifous/textobj-word-column.vim.git
