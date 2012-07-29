@@ -65,6 +65,7 @@ alias gb='git branch'
 alias ack='ack-grep'
 
 # ARM development
+alias stm32-gdb='st-util &> /dev/null & arm-none-eabi-gdb -q -ex "tar rem :4242" --symbol \!^'
 export PATH=$HOME/arm-none-eabi-toolchain/bin/:$HOME/programming/embedded/stm32/stlink/flash/:$HOME/programming/embedded/stm32/stlink/gdbserver/:$PATH
 
 # Android (Repo)
