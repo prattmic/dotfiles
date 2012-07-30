@@ -53,6 +53,7 @@ bindkey '^[[2~' overwrite-mode
 
 # Vim is THE editor
 export EDITOR="vim"
+alias svim='sudo vim'
 
 # Git
 alias gs='git status'
@@ -63,6 +64,9 @@ alias gb='git branch'
 
 # Ack
 alias ack='ack-grep'
+
+# Tmux
+alias tmux='tmux -2'
 
 # ARM development
 alias stm32-gdb='st-util &> /dev/null & arm-none-eabi-gdb -q -ex "tar rem :4242" --symbol \!^'
