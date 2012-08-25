@@ -72,6 +72,13 @@ noremap <c-j> <c-w>j
 noremap <c-k> <c-w>k
 noremap <c-l> <c-w>l
 
+" K splits lines (opposite of J)
+nmap K i<cr><esc>k$
+
+" go opens a new line, but does not enter edit mode
+nmap go o<esc>
+nmap gO O<esc>
+
 " Make C-BS and C-Del work like they do in most text editors for the sake of muscle memory
 imap <C-BS> <C-W>
 imap <C-Del> <esc>Ea<C-W>
@@ -92,8 +99,10 @@ cmap w!! w !sudo tee %
 " best mapping ever - swap ; and :
 nnoremap ; :
 
-" F9 is NERDTree, F10 is Taglist
+" F9 is Taglist
 noremap <F9> :TlistToggle<CR>
+" F5 is Gundo
+nnoremap <F5> :GundoToggle<CR>
 
 " Search up for tags in Ctags
 set tags=tags;/
