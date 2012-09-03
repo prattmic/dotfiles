@@ -17,6 +17,8 @@ set laststatus=2               " always show statusline
 set noerrorbells               " Don't beep
 set shortmess+=I               " Disable startup splash
 
+set wildignore+=*.o,*.so,*.swp,tags,*.P
+
 " Enable undo after saving
 au BufWritePre /tmp/* setlocal noundofile
 set undodir=~/.vim/undodir
@@ -103,6 +105,11 @@ nnoremap ; :
 noremap <F9> :TlistToggle<CR>
 " F5 is Gundo
 nnoremap <F5> :GundoToggle<CR>
+
+" Map CtrlP to <c-p>
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_extensions = ['tag']
 
 " Search up for tags in Ctags
 set tags=tags;/
