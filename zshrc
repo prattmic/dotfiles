@@ -69,11 +69,19 @@ alias ack='ack-grep'
 alias tmux='tmux -2'
 
 # ARM development
+export PATH=$HOME/arm-none-eabi-toolchain/bin/:$PATH
+export PATH=$HOME/programming/embedded/stm32/stlink/:$PATH
+export PATH=$HOME/programming/embedded/stellaris/lm4tools/lm4flash/:$HOME/programming/embedded/stellaris/lm4tools/lmicdiusb/:$PATH
 alias stm32-gdb='st-util &> /dev/null & arm-none-eabi-gdb -q -ex "tar rem :4242" --symbol \!^'
-export PATH=$HOME/arm-none-eabi-toolchain/bin/:$HOME/programming/embedded/stm32/stlink/:$PATH
+
+function stellaris-gdb() {
+    lmicdi &> /dev/null & arm-none-eabi-gdb -q -ex "tar rem :7777" --symbol "$*";
+    pkill lmicdi;
+}
 
 # Android (Repo)
 export PATH=$HOME/programming/opensource/android/repo:$PATH
+export PATH=$PATH:$HOME/programming/opensource/android/working/out/host/linux-x86/bin
 
 # Golang
 export PATH=$HOME/programming/opensource/golang/go/bin/:$PATH
