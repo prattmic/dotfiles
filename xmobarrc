@@ -1,0 +1,15 @@
+Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
+       , bgColor = "black"
+       , fgColor = "grey"
+       , position = TopW L 98
+       , commands = [ Run Weather "KRDU" ["-t","<tempF>F","-L","64","-H","77","--normal","green","--high","red","--low","lightblue"] 36000
+                    , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
+                    , Run Memory ["-t","Mem: <usedratio>%"] 10
+                    , Run Date "%a %b %_d %l:%M" "date" 10
+                    , Run BatteryP ["BAT0"] ["-t", "<acstatus><left>%", "-L","50","-H","75","--high","green","--normal","yellow", "--low", "red", "--", "-c", "energy_full", "-O", "AC ", "-o", ""] 10
+                    , Run StdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }{ %KRDU% | %cpu% | %memory% | %battery% | <fc=#ee9a00>%date%</fc>"
+       }
