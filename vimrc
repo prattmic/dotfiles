@@ -106,11 +106,6 @@ noremap <F9> :TlistToggle<CR>
 " F5 is Gundo
 nnoremap <F5> :GundoToggle<CR>
 
-" Map CtrlP to <c-p>
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_extensions = ['tag']
-
 " Search up for tags in Ctags
 set tags=tags;/
 " C-\ Open definition in new tab
