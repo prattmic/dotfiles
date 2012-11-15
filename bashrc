@@ -62,19 +62,6 @@ PS1='\[\e[0;32m\]\u@\h\[\e[m\] \[\e[1;34m\]\w\[\e[m\]\[\e[1;33m\]$(parse_git_bra
 
 # Set bash to vi mode!
 set -o vi
-# Vim is the editor
-export EDITOR="vim"
-
-export PATH=~/arm-none-eabi-toolchain/bin/:~/programming/embedded/stm32/stlink/flash/:~/programming/embedded/stm32/stlink/gdbserver/:~/programming/opensource/android/repo:~/programming/opensource/llvm/bin:/home/prattmic/programming/opensource/golang/go/bin/:$PATH
-
-# Alias for ARM GDB
-alias stm32-gdb='st-util &> /dev/null & arm-none-eabi-gdb -q -ex "tar rem :4242" --symbol \!^'
-alias gs='git status'
-alias ga='git add'
-alias gc='git commit'
-alias gd='git diff'
-alias gb='git branch'
-alias ack='ack-grep'
 
 PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
 
@@ -83,8 +70,8 @@ PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
 fi
 
 # enable programmable completion features (you don't need to enable

@@ -1,0 +1,38 @@
+# Vim is THE editor
+export EDITOR="vim"
+alias svim='sudo vim'
+
+# Git
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gd='git diff'
+alias gb='git branch'
+alias gco='git checkout'
+
+# Ack
+alias ack='ack-grep'
+
+# Tmux
+alias tmux='tmux -2'
+
+# ARM development
+export PATH=$HOME/arm-none-eabi-toolchain/bin/:$PATH
+export PATH=$HOME/programming/embedded/stm32/stlink/:$PATH
+export PATH=$HOME/programming/embedded/stellaris/lm4tools/lm4flash/:$HOME/programming/embedded/stellaris/lm4tools/lmicdiusb/:$PATH
+alias stm32-gdb='st-util &> /dev/null & arm-none-eabi-gdb -q -ex "tar rem :4242" --symbol \!^'
+
+function stellaris-gdb() {
+    lmicdi &> /dev/null & arm-none-eabi-gdb -q -ex "tar rem :7777" --symbol "$*";
+    pkill lmicdi;
+}
+
+# Android (Repo)
+export PATH=$HOME/programming/opensource/android/repo:$PATH
+export PATH=$PATH:$HOME/programming/opensource/android/working/out/host/linux-x86/bin
+
+# Golang
+export PATH=$HOME/programming/opensource/golang/go/bin/:$PATH
+
+# LLVM
+export PATH=$HOME/programming/opensource/llvm/bin:$PATH
