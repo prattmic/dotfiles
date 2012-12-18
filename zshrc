@@ -35,6 +35,14 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+# Extended globbing!
+setopt extendedglob
+
+# Esc-v to edit in vim
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
 # Set some keybindings to fix urxvt
 ################################################
 typeset -g -A key
