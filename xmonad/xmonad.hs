@@ -15,6 +15,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((0,              xF86XK_AudioRaiseVolume),   spawn "pactl set-sink-volume 0 +5%")    -- Volume up
     , ((0,              xF86XK_AudioLowerVolume),   spawn "pactl set-sink-volume 0 -- -5%") -- Volume down
     , ((0,              xF86XK_AudioMute),          spawn "~/scripts/toggle-mute")          -- Volume mute
+    , ((0,              xF86XK_Launch1),            spawn "urxvt")                          -- ThinkVantage button launches terminal
     ] ++
     --
     -- mod-{w,e,r}, Switch to physical/Xinerama screens 1, 2, or 3
