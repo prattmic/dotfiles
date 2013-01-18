@@ -40,6 +40,13 @@ function omap4430-core1-gdb() {
     pkill JLinkGDBServer;
 }
 
+# MSP430 development
+export PATH=$HOME/programming/embedded/msp430/mspdebug/bin:$PATH
+
+function msp-gdb() {
+    mspdebug --usb &> /dev/null && mspdebug rf2500 gdb &> /dev/null & msp430-gdb -q -ex "tar rem :2000" --symbol "$*";
+}
+
 # Android (Repo)
 export PATH=$HOME/programming/opensource/android/repo:$PATH
 export PATH=$HOME/programming/opensource/android/working/out/host/linux-x86/bin:$PATH
