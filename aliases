@@ -41,7 +41,7 @@ function omap4430-core1-gdb() {
 }
 
 # MSP430 development
-export PATH=$HOME/programming/embedded/msp430/mspdebug/bin:$PATH
+export PATH=/usr/local/msp430/bin:$PATH
 
 function msp-gdb() {
     mspdebug --usb &> /dev/null && mspdebug rf2500 gdb &> /dev/null & msp430-gdb -q -ex "tar rem :2000" --symbol "$*";
