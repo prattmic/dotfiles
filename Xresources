@@ -1,18 +1,18 @@
 ! urxvt
 
-URxvt*geometry:                90x30
-URxvt*font:  xft:Terminus:size=10
-URxvt*depth:                32
-URxvt*background:            [85]#000000
-URxvt*foreground:            [100]#ffffff
-URxvt*borderless: 1
-URxvt*scrollBar:            false
-URxvt*saveLines:  5000
-URxvt*termName:    rxvt-unicode
-URxvt*buffered: false
-URxvt.perl-ext-common: default,matcher
-URxvt.urlLauncher: chromium
-URxvt.matcher.button: 1
+URxvt*geometry:         90x30
+URxvt*font:             xft:Terminus:size=10
+URxvt*depth:            32
+URxvt*background:       [85]#000000
+URxvt*foreground:       [100]#ffffff
+URxvt*borderless:       1
+URxvt*scrollBar:        false
+URxvt*saveLines:        5000
+URxvt*termName:         rxvt-unicode
+URxvt*buffered:         false
+URxvt.perl-ext-common:  default,matcher
+URxvt.urlLauncher:      sensible-browser
+URxvt.matcher.button:   1
 
 ! My Colors
 *foreground:     rgb:22/22/22
