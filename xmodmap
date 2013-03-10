@@ -1,0 +1,5 @@
+! Clear Caps Lock
+clear Lock
+
+! Set Caps Lock to Escape
+keycode 0x42 = Escape
