@@ -5,7 +5,7 @@
 function run_xmonad() {
     trayer --edge top --align right --SetDockType true --SetPartialStrut true \
          --expand true --width 2 --transparent true --tint 0x000000 --height 12 &
-    ck-launch-session nm-applet --sm-disable &
+    wicd-client --tray &
 
     exec xmonad
 }
