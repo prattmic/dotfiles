@@ -2,6 +2,7 @@ import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.SetWMName
+import XMonad.Hooks.UrgencyHook
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
 import XMonad.Actions.PhysicalScreens
@@ -16,6 +17,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((0,              xF86XK_AudioLowerVolume),   spawn "pactl set-sink-volume 0 -- -5%") -- Volume down
     , ((0,              xF86XK_AudioMute),          spawn "~/scripts/toggle-mute")          -- Volume mute
     , ((0,              xF86XK_Launch1),            spawn "urxvt")                          -- ThinkVantage button launches terminal
+    , ((modm,           xK_f),                      focusUrgent)                            -- Focus urgent window
     ] ++
     --
     -- mod-{w,e,r}, Switch to physical/Xinerama screens 1, 2, or 3
@@ -27,7 +29,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
 main = do
     xmproc <- spawnPipe "xmobar"
-    xmonad $ defaultConfig
+    xmonad $ withUrgencyHook NoUrgencyHook defaultConfig
         { modMask       = mod4Mask                                     -- Rebind Mod to super key
         , manageHook    = manageDocks <+> manageHook defaultConfig     -- Add support for status bar and dock
         , layoutHook    = avoidStruts  $  layoutHook defaultConfig     -- Add support for status bar and dock
@@ -36,5 +38,6 @@ main = do
         , logHook       = dynamicLogWithPP xmobarPP
             { ppOutput  = hPutStrLn xmproc
             , ppTitle   = xmobarColor "green" "" . shorten 50
+            , ppUrgent  = xmobarColor "red" ""
             }
         }
