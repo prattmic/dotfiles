@@ -18,7 +18,6 @@ alias tmux='tmux -2'
 
 # ARM development
 export PATH=$HOME/programming/embedded/stm32/stlink/:$PATH
-export PATH=$HOME/programming/embedded/stellaris/lm4tools/lm4flash/:$HOME/programming/embedded/stellaris/lm4tools/lmicdiusb/:$PATH
 
 function stm32-gdb() {
     st-util &> /dev/null & arm-none-eabi-gdb -q -ex "tar rem :4242" --symbol "$*";
