@@ -17,7 +17,6 @@ alias ack='ack-grep'
 alias tmux='tmux -2'
 
 # ARM development
-export PATH=$HOME/arm-none-eabi-toolchain/bin/:$PATH
 export PATH=$HOME/programming/embedded/stm32/stlink/:$PATH
 export PATH=$HOME/programming/embedded/stellaris/lm4tools/lm4flash/:$HOME/programming/embedded/stellaris/lm4tools/lmicdiusb/:$PATH
 
