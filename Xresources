@@ -40,5 +40,5 @@ URxvt.urgentOnBell:     true
 *color6:         rgb:92/b1/9e
 *color14:        rgb:a1/cd/cd
 !!white
-*color7:         rgb:00/00/00
-*color15:        rgb:00/00/00
+*color7:         rgb:cc/cc/cc
+*eolor15:        rgb:ee/ee/ee
