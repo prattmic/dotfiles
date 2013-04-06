@@ -140,3 +140,6 @@ au BufWritePost .c,.cc,.cpp,*.h silent! !ctags -R &
 " Syntax highlighting
 
 autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino   " Enable syntax highlighting for Arduino files.
+
+" don't remember the cursor position in git commits
+au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
