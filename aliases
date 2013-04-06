@@ -5,7 +5,7 @@ alias svim='sudo vim'
 # Git
 alias gs='git status'
 alias ga='git add'
-alias gc='git commit'
+alias gc='git commit -v'
 alias gd='git diff'
 alias gb='git branch'
 alias gco='git checkout'
