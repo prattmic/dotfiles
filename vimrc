@@ -81,6 +81,10 @@ if has("autocmd")
   \ endif
 endif
 
+" Highlight trailing whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+
 
 " Keybindings
 
