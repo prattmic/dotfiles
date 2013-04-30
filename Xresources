@@ -16,29 +16,27 @@ URxvt.matcher.button:   1
 URxvt.urgentOnBell:     true
 
 /* Tango */
-*foreground: #C8C8C8
-*background: #323232
 !!black
-*color0:     #2E3436
-*color8:     #555753
+URxvt*color0:     #2E3436
+URxvt*color8:     #555753
 !!red
-*color1:     #CC0000
-*color9:     #EF2929
+URxvt*color1:     #CC0000
+URxvt*color9:     #EF2929
 !!green
-*color2:     #4E9A06
-*color10:    #8AE234
+URxvt*color2:     #4E9A06
+URxvt*color10:    #8AE234
 !!yellow (orange)
-*color3:     #C4A000
-*color11:    #FCE94F
+URxvt*color3:     #C4A000
+URxvt*color11:    #FCE94F
 !!blue
-*color4:     #3465A4
-*color12:    #729FCF
+URxvt*color4:     #3465A4
+URxvt*color12:    #729FCF
 !!magenta
-*color5:     #75507B
-*color13:    #AD7FA8
+URxvt*color5:     #75507B
+URxvt*color13:    #AD7FA8
 !!cyan
-*color6:     #06989A
-*color14:    #34E2E2
+URxvt*color6:     #06989A
+URxvt*color14:    #34E2E2
 !!white
-*color7:     #D3D7CF
-*color15:    #EEEEEC
+URxvt*color7:     #D3D7CF
+URxvt*color15:    #EEEEEC
