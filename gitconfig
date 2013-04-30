@@ -1,0 +1,7 @@
+[user]
+	name = Michael Pratt
+	email = michael@pratt.im
+[core]
+	editor = vim
+[color]
+	ui = true
