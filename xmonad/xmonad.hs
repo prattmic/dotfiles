@@ -15,7 +15,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((controlMask,    xK_Print),                  spawn "sleep 0.2; scrot -s")            -- ^PrintScreen takes screenshot of window
     , ((0,              xF86XK_AudioRaiseVolume),   spawn "pactl set-sink-volume 0 +5%")    -- Volume up
     , ((0,              xF86XK_AudioLowerVolume),   spawn "pactl set-sink-volume 0 -- -5%") -- Volume down
-    , ((0,              xF86XK_AudioMute),          spawn "~/scripts/toggle-mute")          -- Volume mute
+    , ((0,              xF86XK_AudioMute),          spawn "~/dotfiles/scripts/toggle-mute") -- Volume mute
     , ((0,              xF86XK_Launch1),            spawn "urxvt")                          -- ThinkVantage button launches terminal
     , ((modm,           xK_f),                      focusUrgent)                            -- Focus urgent window
     ] ++

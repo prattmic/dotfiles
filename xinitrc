@@ -30,7 +30,7 @@ xmodmap ~/.xmodmap
 xsetroot -cursor_name left_ptr &  # sets the cursor icon
 
 # Multi-monitor support
-sh ~/scripts/monitors.sh
+sh ~/dotfiles/scripts/monitors.sh
 
 managers="xmonad i3 awesome gnome-session"
 
