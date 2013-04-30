@@ -32,9 +32,6 @@ xsetroot -cursor_name left_ptr &  # sets the cursor icon
 # Multi-monitor support
 sh ~/scripts/monitors.sh
 
-# TrackPoint Scrolling
-sh ~/scripts/scroll.sh
-
 managers="xmonad i3 awesome gnome-session"
 
 default_manager=xmonad
