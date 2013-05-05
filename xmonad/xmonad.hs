@@ -18,6 +18,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((0,              xF86XK_AudioMute),          spawn "~/dotfiles/scripts/toggle-mute") -- Volume mute
     , ((0,              xF86XK_Launch1),            spawn "urxvt")                          -- ThinkVantage button launches terminal
     , ((modm,           xK_f),                      focusUrgent)                            -- Focus urgent window
+    , ((modm,           xK_p),                      spawn "exe=`dmenu_path | yeganesh` && eval \"exec $exe\"")  -- Launch dmenu via yeganesh.  This orders by popularity.
     ] ++
     --
     -- mod-{w,e,r}, Switch to physical/Xinerama screens 1, 2, or 3
