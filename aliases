@@ -16,6 +16,9 @@ alias ack='ack-grep'
 # Tmux
 alias tmux='tmux -2'
 
+# Use vi keybindings for info
+alias info='info --vi-keys'
+
 # ARM development
 export PATH=$HOME/programming/embedded/stm32/stlink/:$PATH
 
