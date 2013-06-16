@@ -15,8 +15,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((controlMask,    xK_Print),                  spawn "sleep 0.2; scrot -s")            -- ^PrintScreen takes screenshot of window
     , ((0,              xF86XK_AudioRaiseVolume),   spawn "pactl set-sink-volume 0 +5%")    -- Volume up
     , ((0,              xF86XK_AudioLowerVolume),   spawn "pactl set-sink-volume 0 -- -5%") -- Volume down
-    , ((0,              xF86XK_AudioMute),          spawn "~/dotfiles/scripts/toggle-mute") -- Volume mute
+    , ((0,              xF86XK_AudioMute),          spawn "~/dotfiles/scripts/toggle-mute sink") -- Volume mute
     , ((0,              xF86XK_Launch1),            spawn "urxvt")                          -- ThinkVantage button launches terminal
+    , ((0,              xF86XK_Launch2),            spawn "~/dotfiles/scripts/toggle-mute source") -- Mic mute
     , ((modm,           xK_f),                      focusUrgent)                            -- Focus urgent window
     , ((modm,           xK_p),                      spawn "exe=`dmenu_path | yeganesh` && eval \"exec $exe\"")  -- Launch dmenu via yeganesh.  This orders by popularity.
     ] ++
