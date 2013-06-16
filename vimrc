@@ -43,7 +43,7 @@ set undolevels=1000             " maximum number of changes that can be undone
 set undoreload=10000            " maximum number lines to save for undo on a buffer reload
 set history=1000                " Lots of history
 set backupdir=~/.vim/tmp,.      " Backup Dir
-set directory=~/.vim/tmp,.      " Swap Dir 
+set directory=~/.vim/tmp,.      " Swap Dir
 
 set hidden                     " allow buffer to be changed without writing to disk
 
@@ -74,7 +74,7 @@ else
 endif
 
 " When editing a file, always jump to the last cursor position
-if has("autocmd") 
+if has("autocmd")
   autocmd BufReadPost *
   \ if line("'\"") > 0 && line ("'\"") <= line("$") |
   \   exe "normal! g'\"" |
@@ -96,7 +96,7 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 
 "Change directory to the dir of the current buffer
-noremap \cd :cd %:p:h<CR>  
+noremap \cd :cd %:p:h<CR>
 
 " Window switching
 noremap <c-h> <c-w>h
@@ -113,7 +113,7 @@ nmap gO O<esc>
 
 " Windows-like copy/cut/paste mappings
 " CTRL-V is Paste in insert mode
-imap <C-V>              "+gpa   
+imap <C-V>              "+gpa
 " CTRL-C is Copy, CTRL-X is Cut, in visual mode
 vmap <C-C>              "+y
 vmap <C-x>              "+d
@@ -134,9 +134,9 @@ nnoremap <F5> :GundoToggle<CR>
 " Ctags
 set tags=tags;/         " Search up for tags in Ctags
 " C-\ Open definition in new tab
-map <A-]> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>   
+map <A-]> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 " A-] Open definition in vert split
-map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>    
+map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 " Generate Ctags on save
 au BufWritePost .c,.cc,.cpp,*.h silent! !ctags -R &
 
