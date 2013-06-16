@@ -1,3 +1,29 @@
 #!/bin/bash
-toggle=$((pactl list sinks | grep -q Mute:.no && echo 1) || echo 0)
-pactl set-sink-mute 0 $toggle
+
+# Toggles mute on default sink/source in PulseAudio
+
+# Specify sink/source in $1
+if [[ -n $1 ]]; then
+    devtype=$1
+else
+    devtype=sink
+fi
+
+# Get default sink/source
+default=$(pactl stat | sed -n -e "s/Default $devtype: \(.*\)$/\1/ip")
+# Can't find device!
+if [[ -z $default ]]; then
+    exit 1
+fi
+
+# Get mute status for default
+mute=$(pacmd dump | sed -n -e "s/set-$devtype-mute $default \(.*\)$/\1/ip")
+
+# Set to opposite
+if [ "$mute" == "yes" ]; then
+    toggle=0
+else
+    toggle=1
+fi
+
+pactl set-$devtype-mute $default $toggle
