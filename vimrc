@@ -147,3 +147,5 @@ autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino   " Enable syntax highligh
 
 " don't remember the cursor position in git commits
 au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
+
+au FileType go set noexpandtab
