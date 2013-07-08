@@ -39,7 +39,7 @@ main = do
         , keys          = \c -> myKeys c `M.union` keys defaultConfig c
         , logHook       = dynamicLogWithPP xmobarPP
             { ppOutput  = hPutStrLn xmproc
-            , ppTitle   = xmobarColor "green" "" . shorten 50
+            , ppTitle   = xmobarColor "green" "" . shorten 100
             , ppUrgent  = xmobarColor "red" ""
             }
         }
