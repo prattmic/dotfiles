@@ -83,7 +83,7 @@ endif
 
 " Highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 
 
 " Keybindings
