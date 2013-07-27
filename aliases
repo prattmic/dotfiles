@@ -20,8 +20,6 @@ alias tmux='tmux -2'
 alias info='info --vi-keys'
 
 # ARM development
-export PATH=$HOME/programming/embedded/stm32/stlink/:$PATH
-
 function stm32-gdb() {
     st-util &> /dev/null & arm-none-eabi-gdb -q -ex "tar rem :4242" --symbol "$*";
 }
@@ -47,13 +45,3 @@ export PATH=/usr/local/msp430/bin:$PATH
 function msp-gdb() {
     mspdebug --usb &> /dev/null && mspdebug rf2500 gdb &> /dev/null & msp430-gdb -q -ex "tar rem :2000" --symbol "$*";
 }
-
-# Android (Repo)
-export PATH=$HOME/programming/opensource/android/repo:$PATH
-export PATH=$HOME/programming/opensource/android/working/out/host/linux-x86/bin:$PATH
-
-# Golang
-export PATH=$HOME/programming/opensource/golang/go/bin/:$PATH
-
-# LLVM
-export PATH=$HOME/programming/opensource/llvm-clang/bin:$PATH
