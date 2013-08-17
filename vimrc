@@ -85,6 +85,9 @@ endif
 highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 
+" Display tabs
+set listchars=tab:».
+set list
 
 " Keybindings
 
