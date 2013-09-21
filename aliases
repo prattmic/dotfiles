@@ -50,3 +50,6 @@ export PATH=/usr/local/msp430/bin:$PATH
 function msp-gdb() {
     mspdebug --usb &> /dev/null && mspdebug rf2500 gdb &> /dev/null & msp430-gdb -q -ex "tar rem :2000" --symbol "$*";
 }
+
+# Chromium OS
+export PATH=$PATH:/home/prattmic/prog/opensource/chromiumos/depot_tools/
