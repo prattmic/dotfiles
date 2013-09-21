@@ -1,0 +1,3 @@
+#!/bin/sh
+#
+# This dynamic MOTD based on http://nickcharlton.net/posts/debian-ubuntu-dynamic-motd.html

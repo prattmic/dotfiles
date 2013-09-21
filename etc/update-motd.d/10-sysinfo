@@ -1,0 +1,38 @@
+#!/bin/bash
+#
+#    10-sysinfo - generate the system information
+#    Copyright (c) 2013 Nick Charlton
+#
+#    Authors: Nick Charlton <hello@nickcharlton.net>
+#
+#    This program is free software; you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation; either version 2 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License along
+#    with this program; if not, write to the Free Software Foundation, Inc.,
+#    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+date=`date`
+uptime=`uptime | sed 's/^.* up \+\(.\+\), \+[0-9] user.*$/\1/'`
+load=`cat /proc/loadavg | awk '{print $1 " " $2 " " $3}'`
+root_usage=`df -h / | awk '/\// {print $(NF-1)}'`
+home_usage=`df -h /home | awk '/\// {print $(NF-1)}'`
+memory_usage=`free -m | awk '/Mem/ { printf("%3.1f%%", $3/$2*100) }'`
+users=`users | wc -w`
+
+echo "System information as of: $date"
+echo
+printf "System uptime:\t%s\t\n" "$uptime"
+printf "System load:\t%s\t\n" "$load"
+printf "Memory usage:\t%s\t\n" $memory_usage
+printf "Usage on /:\t%s\t\n" $root_usage
+printf "Usage on /home:\t%s\t\n" $home_usage
+printf "Local users:\t%s\n" $users
+echo
