@@ -35,12 +35,12 @@ function am3359-gdb() {
 }
 
 function omap4430-core0-gdb() {
-    JLinkGDBServer -speed 12000 -scriptfile /usr/local/bin/OMAP4430_Core0.JLinkScript &> /dev/null & arm-none-eabi-gdb -q -ex "tar rem :2331" --symbol "$*";
+    JLinkGDBServer -speed 12000 -scriptfile /opt/SEGGER/JLink/Samples/JLink/Scripts/OMAP4430_Core0.JLinkScript &> /dev/null & arm-none-eabi-gdb -q -ex "tar rem :2331" --symbol "$*";
     pkill JLinkGDBServer;
 }
 
 function omap4430-core1-gdb() {
-    JLinkGDBServer -speed 12000 -scriptfile /usr/local/bin/OMAP4430_Core1.JLinkScript &> /dev/null & arm-none-eabi-gdb -q -ex "tar rem :2331" --symbol "$*";
+    JLinkGDBServer -speed 12000 -scriptfile /opt/SEGGER/JLink/Samples/JLink/Scripts/OMAP4430_Core1.JLinkScript &> /dev/null & arm-none-eabi-gdb -q -ex "tar rem :2331" --symbol "$*";
     pkill JLinkGDBServer;
 }
 
