@@ -1,0 +1,8 @@
+# Prefer packages from testing over unstable
+Package: *
+Pin: release a=testing
+Pin-Priority: 650
+
+Package: *
+Pin: release a=unstable
+Pin-Priority: 600
