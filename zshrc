@@ -59,6 +59,9 @@ bindkey '^[[C' forward-char
 bindkey '^[[2~' overwrite-mode
 ################################################
 
+# ^R for history search
+bindkey "^R" history-incremental-search-backward
+
 if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
