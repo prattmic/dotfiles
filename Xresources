@@ -15,6 +15,11 @@ URxvt.url-launcher:      sensible-browser
 URxvt.matcher.button:   1
 URxvt.urgentOnBell:     true
 
+! Don't jump to the bottom after scrolling up
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: true
+URxvt*scrollTtyKeypress: true
+
 /* Tango */
 ! black dark/light
 URxvt*color0:             #2e3436
