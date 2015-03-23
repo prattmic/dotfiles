@@ -25,6 +25,9 @@ set softtabstop=4              " defines number of spaces for when adding/remvin
 set shiftwidth=4               " number of spaces to use for autoindent
 set expandtab                  " use spaces instead of tab characters
 
+" Allow switching to Linux style tabbing
+:command Linuxtab set noexpandtab tabstop=8 softtabstop=8 shiftwidth=8
+
 " Indention
 set autoindent
 set cindent
