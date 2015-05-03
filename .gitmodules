@@ -13,3 +13,6 @@
 [submodule "vim/bundle/vim-racket"]
 	path = vim/bundle/vim-racket
 	url = https://github.com/wlangstroth/vim-racket
+[submodule "vim/bundle/rust.vim"]
+	path = vim/bundle/rust.vim
+	url = https://github.com/rust-lang/rust.vim.git
