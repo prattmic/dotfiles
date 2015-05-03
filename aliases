@@ -25,7 +25,7 @@ function stm32-gdb() {
 }
 
 function jlink-gdb() {
-    JLinkGDBServer -speed 12000 &> /dev/null & arm-none-eabi-gdb -q -ex "tar rem :2331" --symbol "$*";
+    JLinkGDBServer &> /dev/null & arm-none-eabi-gdb -q -ex "tar rem :2331" --symbol "$*";
     pkill JLinkGDBServer;
 }
 
