@@ -43,8 +43,13 @@ autoload -z edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
-# Set some keybindings to fix urxvt
+# Set some keybindings
 ################################################
+autoload up-line-or-beginning-search
+autoload down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+
 typeset -g -A key
 bindkey '^?' backward-delete-char
 bindkey '^[[7~' beginning-of-line
@@ -52,10 +57,10 @@ bindkey '^[[5~' up-line-or-history
 bindkey '^[[3~' delete-char
 bindkey '^[[8~' end-of-line
 bindkey '^[[6~' down-line-or-history
-bindkey '^[[A' up-line-or-search
+bindkey '^[[A' up-line-or-beginning-search
 bindkey '^[[D' backward-char
-bindkey '^[[B' down-line-or-search
-bindkey '^[[C' forward-char 
+bindkey '^[[B' down-line-or-beginning-search
+bindkey '^[[C' forward-char
 bindkey '^[[2~' overwrite-mode
 ################################################
 
