@@ -156,3 +156,14 @@ autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino   " Enable syntax highligh
 
 " Go uses real tabs
 au FileType go set noexpandtab
+
+" CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+      \ --ignore .git
+      \ --ignore .svn
+      \ --ignore .hg
+      \ --ignore .DS_Store
+      \ --ignore "**/*.pyc"
+      \ -g ""'
