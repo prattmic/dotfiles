@@ -156,6 +156,9 @@ autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino   " Enable syntax highligh
 
 " Go uses real tabs
 au FileType go set noexpandtab
+au FileType go set tabstop=8
+au FileType go set softtabstop=8
+au FileType go set shiftwidth=8
 
 " CtrlP
 let g:ctrlp_map = '<c-p>'
