@@ -70,3 +70,7 @@ bindkey "^R" history-incremental-search-backward
 if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
+
+# Google Cloud SDK.
+source '/home/prattmic/prog/web/gcp/google-cloud-sdk/path.zsh.inc'
+source '/home/prattmic/prog/web/gcp/google-cloud-sdk/completion.zsh.inc'
