@@ -64,11 +64,11 @@ nnoremap <CR> :noh<CR><CR>
 set timeout timeoutlen=1000 ttimeoutlen=100
 
 
-" Use Wombat for colorful terminals, xterm16 for low color terms
+" Use peachpuff for colorful terminals, xterm16 for low color terms
 if &t_Co > 16 || has("gui_running")
     syntax enable                  " enable syntax highlighting
     set t_Co=256                   " use 256 colours in terminal vim
-    colorscheme peachpuff
+    colorscheme peachpuff          " ships with vim
 else
     syntax enable
     let xterm16_colormap = 'standard'
