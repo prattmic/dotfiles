@@ -55,6 +55,3 @@ function msp-gdb() {
 export PATH=$PATH:/home/prattmic/prog/opensource/chromiumos/depot_tools/
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/
-
-# Bazel
-export PATH=$PATH:/home/prattmic/prog/opensource/bazel/output/
