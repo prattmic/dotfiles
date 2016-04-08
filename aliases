@@ -2,6 +2,9 @@
 export EDITOR="vim"
 alias svim='sudo vim'
 
+# ls
+alias lh='ls -lh'
+
 # Git
 alias gs='git status'
 alias ga='git add'
