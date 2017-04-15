@@ -58,3 +58,13 @@ function msp-gdb() {
 export PATH=$PATH:/home/prattmic/prog/opensource/chromiumos/depot_tools/
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/
+
+# Go GAE
+export PATH=$PATH:/home/prattmic/prog/web/gcp/go_appengine
+
+# Rust
+export PATH=$PATH:/home/prattmic/.cargo/bin
+
+# Quartus
+export QSYS_ROOTDIR="/home/prattmic/prog/embedded/fpga/altera/15.0/quartus/sopc_builder/bin"
+export ALTERAOCLSDKROOT="/home/prattmic/prog/embedded/fpga/altera/15.0/hld"
