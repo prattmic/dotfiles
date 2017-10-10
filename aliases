@@ -59,9 +59,6 @@ export PATH=$PATH:/home/prattmic/prog/opensource/chromiumos/depot_tools/
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/
 
-# Go GAE
-export PATH=$PATH:/home/prattmic/prog/web/gcp/go_appengine
-
 # Rust
 export PATH=$PATH:/home/prattmic/.cargo/bin
 
