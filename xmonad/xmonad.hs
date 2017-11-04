@@ -21,7 +21,6 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((0,              xF86XK_Launch2),            spawn "~/dotfiles/scripts/toggle-mute source") -- Mic mute
     , ((modm,           xK_f),                      focusUrgent)                            -- Focus urgent window
     , ((modm,           xK_p),                      spawn "exe=`echo $PATH | sed 's!:! !g' | xargs lsx | yeganesh` && eval \"exec $exe\"")  -- Launch dmenu via yeganesh.  This orders by popularity.
-    , ((modm,           xK_a),                      spawn "keepass2 --auto-type")           -- Perform Keepass autotyping
     , ((modm,           xK_b),                      sendMessage ToggleStruts)               -- "Toggle struts"
     ] ++
     --
