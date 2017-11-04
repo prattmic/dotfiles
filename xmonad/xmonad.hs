@@ -22,6 +22,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,           xK_f),                      focusUrgent)                            -- Focus urgent window
     , ((modm,           xK_p),                      spawn "exe=`echo $PATH | sed 's!:! !g' | xargs lsx | yeganesh` && eval \"exec $exe\"")  -- Launch dmenu via yeganesh.  This orders by popularity.
     , ((modm,           xK_a),                      spawn "keepass2 --auto-type")           -- Perform Keepass autotyping
+    , ((modm,           xK_b),                      sendMessage ToggleStruts)               -- "Toggle struts"
     ] ++
     --
     -- mod-{w,e,r}, Switch to physical/Xinerama screens 1, 2, or 3
@@ -34,7 +35,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 main = do
     xmproc <- spawnPipe "xmobar"
     xmonad $ withUrgencyHook NoUrgencyHook
-           $ ewmh defaultConfig
+           $ docks $ ewmh defaultConfig
         { modMask       = mod4Mask                                     -- Rebind Mod to super key
         , manageHook    = manageDocks <+> manageHook defaultConfig     -- Add support for status bar and dock
         , layoutHook    = avoidStruts  $  layoutHook defaultConfig     -- Add support for status bar and dock
