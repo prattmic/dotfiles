@@ -36,7 +36,6 @@ set cindent
 set formatoptions+=r           " Insert comment leader after hitting <Enter>.
 set formatoptions+=o           " Insert comment leader after hitting o/O.
 set formatoptions+=j           " Remove comment leader when joining lines.
-set formatoptions+=a           " Automatically wrap comments to column width.
 
 " Disable annoying features
 set noerrorbells               " Don't beep
