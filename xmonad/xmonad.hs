@@ -20,7 +20,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((0,              xF86XK_Launch1),            spawn "urxvt")                          -- ThinkVantage button launches terminal
     , ((0,              xF86XK_Launch2),            spawn "~/dotfiles/scripts/toggle-mute source") -- Mic mute
     , ((modm,           xK_f),                      focusUrgent)                            -- Focus urgent window
-    , ((modm,           xK_p),                      spawn "exe=`echo $PATH | sed 's!:! !g' | xargs lsx | yeganesh` && eval \"exec $exe\"")  -- Launch dmenu via yeganesh.  This orders by popularity.
+    , ((modm,           xK_p),                      spawn "exe=`echo $PATH | sed 's!:! !g' | xargs -d ' ' -I{} find {} -executable -type f -maxdepth 1 -printf '%f\n' | yeganesh` && eval \"exec $exe\"")  -- Launch dmenu via yeganesh.  This orders by popularity.
     , ((modm,           xK_b),                      sendMessage ToggleStruts)               -- "Toggle struts"
     ] ++
     --
