@@ -11,18 +11,6 @@ function run_xmonad() {
     exec ck-launch-session dbus-launch xmonad
 }
 
-function run_i3() {
-    exec i3
-}
-
-function run_awesome() {
-    exec awesome
-}
-
-function run_gnome-session() {
-    exec gnome-session
-}
-
 # Set up basic terminal config
 xrdb -merge "${HOME}/.Xresources"
 
@@ -33,17 +21,4 @@ xsetroot -cursor_name left_ptr &  # sets the cursor icon
 # Multi-monitor support
 sh ~/dotfiles/scripts/monitors.sh
 
-managers="xmonad i3 awesome gnome-session"
-
-default_manager=xmonad
-
-for manager in $managers; do
-    if [[ $1 == $manager ]]; then
-        found=1
-        run_$manager
-    fi
-done
-
-if [ -z $found ]; then
-    run_$default_manager
-fi
+run_xmonad
