@@ -8,7 +8,7 @@ function run_xmonad() {
     wicd-client --tray &
     keepassxc &
 
-    exec xmonad
+    exec ck-launch-session dbus-launch xmonad
 }
 
 function run_i3() {
