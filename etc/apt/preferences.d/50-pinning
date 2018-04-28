@@ -1,3 +1,8 @@
+# Prefer node repo over debian.
+Package: *
+Pin: origin deb.nodesource.com
+Pin-Priority: 700
+
 # Prefer packages from testing over unstable
 Package: *
 Pin: release a=testing
