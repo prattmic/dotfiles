@@ -2,8 +2,10 @@ import XMonad
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.SetWMName
 import XMonad.Hooks.UrgencyHook
+import qualified XMonad.StackSet as W
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
 import XMonad.Actions.PhysicalScreens
@@ -32,12 +34,23 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
         | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
         , (f, mask) <- [(viewScreen, 0), (sendToScreen, shiftMask)]]
 
+myManageHook = composeOne
+    [ checkDock -?> doIgnore
+    , isDialog -?> doFloat
+    -- handling for Saleae Logic where popups are burying, move the window to 4
+    -- See https://support.saleae.com/hc/en-us/community/posts/204345355-menus-aren-t-working-under-xmonad
+    , title =? "Saleae Logic Software" -?> doF (W.shift "5:dls")
+    -- ... but don't shove the transients down
+    , className =? "Logic" -?> doIgnore
+    ]
+
 main = do
     xmproc <- spawnPipe "xmobar"
     xmonad $ withUrgencyHook NoUrgencyHook
            $ docks $ ewmh defaultConfig
         { modMask       = mod4Mask                                     -- Rebind Mod to super key
-        , manageHook    = manageDocks <+> manageHook defaultConfig     -- Add support for status bar and dock
+        -- manageDocks to support status bar and dock, myManageHook for other fixes.
+        , manageHook    = myManageHook <+> manageDocks <+> manageHook defaultConfig
         , layoutHook    = avoidStruts  $  layoutHook defaultConfig     -- Add support for status bar and dock
         , startupHook   = setWMName "LG3D"                             -- Set window manager name so that Matlab will open
         , keys          = \c -> myKeys c `M.union` keys defaultConfig c
