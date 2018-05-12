@@ -19,6 +19,6 @@ xmodmap ~/.xmodmap
 xsetroot -cursor_name left_ptr &  # sets the cursor icon
 
 # Multi-monitor support
-sh ~/dotfiles/scripts/monitors.sh
+bash ~/dotfiles/scripts/monitors.sh
 
 run_xmonad
