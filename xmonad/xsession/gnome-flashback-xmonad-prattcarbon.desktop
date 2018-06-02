@@ -1,0 +1,21 @@
+# /usr/share/xsessions/gnome-flashback-xmonad-prattcarbon.desktop
+
+# Run GNOME Flashback with Xmonad via a systemd service. This allows us to
+# easily start additional systemd services for status bar indicators.
+#
+# The start flow looks like this:
+#
+# 1. GDM grabs this config and runs run-systemd-session.
+# 2. run-systemd-session starts gnome-session-flashback-xmonad.target.
+# 3. gnome-session-flashback-xmonad.target starts gnome-session-xmonad.service.
+#    3a. Also several indicator services.
+# 4. gnome-session-xmonad.service starts gnome-flashback-xmonad.
+
+[Desktop Entry]
+Name=GNOME Flashback (Xmonad, prattcarbon)
+Comment=This session logs you into GNOME Flashback with Xmonad
+Exec=/usr/lib/gnome-session/run-systemd-session gnome-session-flashback-xmonad.target
+TryExec=xmonad
+Type=Application
+DesktopNames=GNOME-Flashback;GNOME;
+X-Ubuntu-Gettext-Domain=gnome-flashback

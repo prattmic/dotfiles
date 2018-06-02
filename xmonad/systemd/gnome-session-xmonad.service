@@ -1,0 +1,10 @@
+# ~/.config/systemd/user/gnome-session-xmonad.service
+
+[Unit]
+Description=GNOME Flashback (Xmonad) Session Manager
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/gnome-flashback-xmonad
+# From /usr/lib/systemd/user/gnome-session.service:
+ExecStopPost=-/bin/sh -xc '[ "${XDG_SESSION_PATH}" = "${GNOME_SESSION_XDG_SESSION_PATH}" ] && /usr/bin/dbus-send --type=method_call --address=${UPSTART_SESSION} /com/ubuntu/Upstart com.ubuntu.Upstart0_6.EndSession'
