@@ -151,8 +151,6 @@ set tags=tags;/         " Search up for tags in Ctags
 map <A-]> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 " A-] Open definition in vert split
 map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-" Generate Ctags on save
-au BufWritePost .c,.cc,.cpp,*.h silent! !ctags -R &
 
 
 " Syntax highlighting
