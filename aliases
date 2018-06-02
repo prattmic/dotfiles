@@ -3,7 +3,11 @@ export EDITOR="vim"
 alias svim='sudo vim'
 
 # ls
+alias ls='ls --color=auto'
+alias ll='ls -l'
 alias lh='ls -lh'
+
+alias grep='grep --color=auto'
 
 # Git
 alias gs='git status'
