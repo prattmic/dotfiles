@@ -3,8 +3,9 @@
 import XMonad
 import XMonad.Config.Gnome
 import XMonad.Hooks.DynamicLog
-import XMonad.Hooks.EwmhDesktops
+import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.UrgencyHook
+import XMonad.Layout.Fullscreen
 
 import qualified Codec.Binary.UTF8.String as UTF8
 import qualified DBus as D
@@ -14,10 +15,19 @@ main :: IO ()
 main = do
   dbus <- D.connectSession
   getWellKnownName dbus
-  xmonad $ ewmh gnomeConfig {
+  xmonad $ gnomeConfig {
     modMask = mod4Mask
   , logHook = dynamicLogWithPP (prettyPrinter dbus)
   , handleEventHook = handleEventHook gnomeConfig <+> fullscreenEventHook
+  , manageHook = composeAll [
+      manageHook gnomeConfig
+      -- Let fullscreen windows cover Gnome panels.
+    , isFullscreen --> doFullFloat
+    ]
+  , layoutHook =
+      -- Let fullscreen windows cover Gnome panels.
+      fullscreenFull $
+      layoutHook gnomeConfig
   }
 
 --
