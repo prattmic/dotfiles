@@ -1,0 +1,8 @@
+[Unit]
+Description=Indicator Multiload
+PartOf=graphical-session.target
+After=indicators-pre.target
+
+[Service]
+ExecStart=/usr/bin/indicator-multiload
+Restart=on-failure

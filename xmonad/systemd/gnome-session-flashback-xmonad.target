@@ -14,6 +14,7 @@ Wants=indicator-bluetooth.service
 Wants=indicator-datetime.service
 Wants=indicator-keyboard.service
 Wants=indicator-messages.service
+Wants=indicator-multiload.service
 Wants=indicator-power.service
 Wants=indicator-session.service
 Wants=indicator-sound.service
