@@ -1,3 +1,31 @@
+-- Bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out, "WarningMsg" },
+      { "\nPress any key to exit..." },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
+  end
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup({
+	"neovim/nvim-lspconfig",
+	{
+		"nvim-telescope/telescope.nvim", branch = "0.1.x",
+		dependencies = { "nvim-lua/plenary.nvim" }
+	},
+	"avm99963/vim-jjdescription",
+})
+
+require("lspconfig").gopls.setup{}
+
 -- Enable line numbers
 vim.opt.number = true
 
@@ -54,3 +82,30 @@ vim.cmd[[set mouse=]]
 -- Highlight trailing whitespace
 vim.cmd[[highlight ExtraWhitespace ctermbg=red guibg=red]]
 vim.cmd[[autocmd BufWinEnter * match ExtraWhitespace /\s\+$/]]
+
+-- Telescope
+local builtin = require("telescope.builtin")
+vim.keymap.set('n', 'gf', builtin.find_files, {})
+
+-- Use telescope versions of :help lsp-defaults
+
+-- References
+vim.keymap.set('n', 'grr', function()
+	-- Open in normal mode.
+	return builtin.lsp_references({on_complete = { function()
+		vim.cmd[[stopinsert]]
+	end }})
+end, {})
+-- Implementations
+vim.keymap.set('n', 'gri', function()
+	-- Open in normal mode.
+	return builtin.lsp_implementations({on_complete = { function()
+		vim.cmd[[stopinsert]]
+	end }})
+end, {})
+-- Symbol search
+vim.keymap.set('n', 'grs', builtin.lsp_dynamic_workspace_symbols, {})
+-- Outline
+vim.keymap.set('n', 'gro', builtin.lsp_document_symbols, {})
+
+vim.keymap.set('n', 'grh', vim.lsp.buf.signature_help)
