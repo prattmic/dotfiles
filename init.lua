@@ -26,6 +26,9 @@ require("lazy").setup({
 
 require("lspconfig").gopls.setup{}
 
+-- Enable diagnostics
+vim.diagnostic.config({ virtual_text = true })
+
 -- Enable line numbers
 vim.opt.number = true
 
