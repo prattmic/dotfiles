@@ -73,7 +73,7 @@ set timeout timeoutlen=1000 ttimeoutlen=100
 if &t_Co > 16 || has("gui_running")
     syntax enable                  " enable syntax highlighting
     set t_Co=256                   " use 256 colours in terminal vim
-    colorscheme peachpuff          " ships with vim
+    colorscheme default          " ships with vim
 else
     syntax enable
     let xterm16_colormap = 'standard'

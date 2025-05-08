@@ -54,3 +54,6 @@ unsetopt autocd
 if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
+
+# jj autocomplete
+source <(jj util completion zsh)
