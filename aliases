@@ -1,6 +1,4 @@
-# Vim is THE editor
-export EDITOR="vim"
-alias svim='sudo vim'
+export EDITOR="nvim"
 
 # ls
 alias ls='ls --color=auto'
