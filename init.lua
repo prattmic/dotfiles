@@ -25,6 +25,7 @@ require("lazy").setup({
 })
 
 require("lspconfig").gopls.setup{}
+require("lspconfig").rust_analyzer.setup{}
 
 -- Enable diagnostics
 vim.diagnostic.config({ virtual_text = true })

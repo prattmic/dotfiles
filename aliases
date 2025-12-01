@@ -62,7 +62,7 @@ export PATH=$PATH:/home/prattmic/prog/opensource/chromiumos/depot_tools/
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/
 
 # Go
-export PATH=/home/prattmic/go/bin:$PATH
+export PATH=/home/prattmic/bin/go/bin:$PATH
 
 # Rust
 export PATH=$PATH:/home/prattmic/.cargo/bin
@@ -75,3 +75,4 @@ export QSYS_ROOTDIR="/home/prattmic/prog/embedded/fpga/altera/15.0/quartus/sopc_
 export ALTERAOCLSDKROOT="/home/prattmic/prog/embedded/fpga/altera/15.0/hld"
 
 export PATH=/home/prattmic/bin:$PATH
+export PATH=/home/prattmic/go/bin:$PATH
