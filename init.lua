@@ -24,8 +24,8 @@ require("lazy").setup({
 	"avm99963/vim-jjdescription",
 })
 
-require("lspconfig").gopls.setup{}
-require("lspconfig").rust_analyzer.setup{}
+vim.lsp.enable("gopls")
+vim.lsp.enable("rust_analyzer")
 
 -- Enable diagnostics
 vim.diagnostic.config({ virtual_text = true })
