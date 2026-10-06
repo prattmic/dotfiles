@@ -2,10 +2,5 @@
 name = "Michael Pratt"
 email = "michael@pratt.im"
 
-[templates]
-commit_trailers = '''
-if(
-  !trailers.contains_key("Change-Id"),
-  format_gerrit_change_id_trailer(self)
-)
-'''
+[aliases]
+l = ["log", "-r", "ancestors(reachable(@, mutable()), 2)"]
